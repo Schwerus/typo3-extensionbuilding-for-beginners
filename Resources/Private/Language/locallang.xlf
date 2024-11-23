@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:extkey/Resources/Private/Language/locallang.xlf" date="2024-11-06T13:42:29Z" product-name="extkey">
+		<header/>
+		<body>
+			<trans-unit id="tx_extkey_domain_model_modelone" resname="tx_extkey_domain_model_modelone">
+				<source>Model One</source>
+			</trans-unit>
+			<trans-unit id="tx_extkey_domain_model_modelone.description" resname="tx_extkey_domain_model_modelone.description">
+				<source>Model One</source>
+			</trans-unit>
+			<trans-unit id="tx_extkey_domain_model_modelone.model_one_name" resname="tx_extkey_domain_model_modelone.model_one_name">
+				<source>Model One Name</source>
+			</trans-unit>
+			<trans-unit id="tx_extkey_domain_model_modelone.model_one_name.description" resname="tx_extkey_domain_model_modelone.model_one_name.description">
+				<source>Model One Name</source>
+			</trans-unit>
+			<trans-unit id="tx_extkey_domain_model_modelone.relation_one" resname="tx_extkey_domain_model_modelone.relation_one">
+				<source>Relation One</source>
+			</trans-unit>
+			<trans-unit id="tx_extkey_domain_model_modelone.relation_one.description" resname="tx_extkey_domain_model_modelone.relation_one.description">
+				<source>Relation One</source>
+			</trans-unit>
+			<trans-unit id="tx_extkey_domain_model_modeltwo" resname="tx_extkey_domain_model_modeltwo">
+				<source>Model Two</source>
+			</trans-unit>
+			<trans-unit id="tx_extkey_domain_model_modeltwo.description" resname="tx_extkey_domain_model_modeltwo.description">
+				<source>Model Two</source>
+			</trans-unit>
+			<trans-unit id="tx_extkey_domain_model_modeltwo.model_two_name" resname="tx_extkey_domain_model_modeltwo.model_two_name">
+				<source>Model Two Name</source>
+			</trans-unit>
+			<trans-unit id="tx_extkey_domain_model_modeltwo.model_two_name.description" resname="tx_extkey_domain_model_modeltwo.model_two_name.description">
+				<source>Model Two Name</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

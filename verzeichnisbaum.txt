@@ -1,0 +1,88 @@
+directory structure below of
+
+C:\yourPath\typo3conf\ext\extkey
+
+C:.
+|   composer.json
+|   ExtensionBuilder.json
+|   ext_emconf.php
+|   ext_localconf.php
+|   ext_tables.php
+|   ext_tables.sql
+|   ordner-ausgeben.bat
+|   verzeichnisbaum.txt
+|   
++---Classes
+|   +---Controller
+|   |       ModelOneController.php
+|   |       
+|   \---Domain
+|       +---Model
+|       |       ModelOne.php
+|       |       ModelTwo.php
+|       |       
+|       \---Repository
+|               ModelOneRepository.php
+|               ModelTwoRepository.php
+|               
++---Configuration
+|   |   Icons.php
+|   |   
+|   +---ExtensionBuilder
+|   |       settings.yaml
+|   |       
+|   +---TCA
+|   |   |   tx_extkey_domain_model_modelone.php
+|   |   |   tx_extkey_domain_model_modeltwo.php
+|   |   |   
+|   |   \---Overrides
+|   |           sys_template.php
+|   |           tt_content.php
+|   |           
+|   \---TypoScript
+|           constants.typoscript
+|           setup.typoscript
+|           
++---Resources
+|   +---Private
+|   |   |   .htaccess
+|   |   |   
+|   |   +---Language
+|   |   |       locallang.xlf
+|   |   |       locallang_csh_tx_extkey_domain_model_modelone.xlf
+|   |   |       locallang_db.xlf
+|   |   |       
+|   |   +---Layouts
+|   |   |       Default.html
+|   |   |       
+|   |   +---Partials
+|   |   |   |   FormErrors.html
+|   |   |   |   
+|   |   |   \---ModelOne
+|   |   |           FormFields.html
+|   |   |           
+|   |   \---Templates
+|   |       \---ModelOne
+|   |               New.html
+|   |               
+|   \---Public
+|       \---Icons
+|               Extension.svg
+|               relation.gif
+|               tx_extkey_domain_model_modelone.gif
+|               tx_extkey_domain_model_modeltwo.gif
+|               user_plugin_extfrontendkey.svg
+|               
+\---Tests
+    +---Functional
+    |       BasicTest.php
+    |       
+    \---Unit
+        +---Controller
+        |       ModelOneControllerTest.php
+        |       
+        \---Domain
+            \---Model
+                    ModelOneTest.php
+                    ModelTwoTest.php
+                    
