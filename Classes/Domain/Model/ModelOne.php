@@ -21,6 +21,14 @@ class ModelOne extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
 
     /**
+     * modelOneName
+     *
+     * @var string
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+     */
+    protected $modelOneName = '';
+
+    /**
      * relationOne
      *
      * @var \Vendor\Extkey\Domain\Model\ModelTwo
@@ -28,11 +36,12 @@ class ModelOne extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $relationOne = null;
 
     /**
-     * modelOneName
+     * modelOneContent
      *
      * @var string
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
-    protected $modelOneName = '';
+    protected $modelOneContent = '';
 
     /**
      * Returns the relationOne
@@ -74,5 +83,26 @@ class ModelOne extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setModelOneName(string $modelOneName)
     {
         $this->modelOneName = $modelOneName;
+    }
+
+    /**
+     * Returns the modelOneContent
+     *
+     * @return string
+     */
+    public function getModelOneContent()
+    {
+        return $this->modelOneContent;
+    }
+
+    /**
+     * Sets the modelOneContent
+     *
+     * @param string $modelOneContent
+     * @return void
+     */
+    public function setModelOneContent(string $modelOneContent)
+    {
+        $this->modelOneContent = $modelOneContent;
     }
 }

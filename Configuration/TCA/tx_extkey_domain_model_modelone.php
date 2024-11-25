@@ -14,11 +14,11 @@ return [
         'enablecolumns' => [
             'disabled' => 'hidden',
         ],
-        'searchFields' => 'model_one_name',
+        'searchFields' => 'model_one_name,model_one_content',
         'iconfile' => 'EXT:extkey/Resources/Public/Icons/tx_extkey_domain_model_modelone.gif'
     ],
     'types' => [
-        '1' => ['showitem' => 'model_one_name, relation_one, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, sys_language_uid, l10n_parent, l10n_diffsource, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, hidden, '],
+        '1' => ['showitem' => 'model_one_name, model_one_content, relation_one, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, sys_language_uid, l10n_parent, l10n_diffsource, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, hidden, '],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -70,7 +70,18 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim',
+                'eval' => 'trim,required',
+                'default' => ''
+            ],
+        ],
+        'model_one_content' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:extkey/Resources/Private/Language/locallang_db.xlf:tx_extkey_domain_model_modelone.model_one_content',
+            'description' => 'LLL:EXT:extkey/Resources/Private/Language/locallang_db.xlf:tx_extkey_domain_model_modelone.model_one_content.description',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim,required',
                 'default' => ''
             ],
         ],

@@ -6,11 +6,11 @@ defined('TYPO3') || die();
         'Extkey',
         'Extfrontendkey',
         [
-            \Vendor\Extkey\Controller\ModelOneController::class => 'new, create'
+            \Vendor\Extkey\Controller\ModelOneController::class => 'list, show, new, create, edit, update, delete'
         ],
         // non-cacheable actions
         [
-            \Vendor\Extkey\Controller\ModelOneController::class => 'create'
+            \Vendor\Extkey\Controller\ModelOneController::class => 'create, update, delete'
         ]
     );
 

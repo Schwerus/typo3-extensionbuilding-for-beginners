@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:extkey/Resources/Private/Language/locallang_csh_tx_extkey_domain_model_modeltwo.xlf" date="2024-11-06T13:42:29Z" product-name="extkey">
+	<file source-language="en" datatype="plaintext" original="EXT:extkey/Resources/Private/Language/locallang_csh_tx_extkey_domain_model_modeltwo.xlf" date="2024-11-23T21:30:33Z" product-name="extkey">
 		<header/>
 		<body>
 			<trans-unit id="model_two_name.description" resname="model_two_name.description">

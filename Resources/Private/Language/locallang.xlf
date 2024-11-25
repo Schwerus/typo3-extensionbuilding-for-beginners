@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:extkey/Resources/Private/Language/locallang.xlf" date="2024-11-06T13:42:29Z" product-name="extkey">
+	<file source-language="en" datatype="plaintext" original="EXT:extkey/Resources/Private/Language/locallang.xlf" date="2024-11-23T21:30:33Z" product-name="extkey">
 		<header/>
 		<body>
 			<trans-unit id="tx_extkey_domain_model_modelone" resname="tx_extkey_domain_model_modelone">
@@ -14,6 +14,12 @@
 			</trans-unit>
 			<trans-unit id="tx_extkey_domain_model_modelone.model_one_name.description" resname="tx_extkey_domain_model_modelone.model_one_name.description">
 				<source>Model One Name</source>
+			</trans-unit>
+			<trans-unit id="tx_extkey_domain_model_modelone.model_one_content" resname="tx_extkey_domain_model_modelone.model_one_content">
+				<source>Model One Content</source>
+			</trans-unit>
+			<trans-unit id="tx_extkey_domain_model_modelone.model_one_content.description" resname="tx_extkey_domain_model_modelone.model_one_content.description">
+				<source>Model One Content</source>
 			</trans-unit>
 			<trans-unit id="tx_extkey_domain_model_modelone.relation_one" resname="tx_extkey_domain_model_modelone.relation_one">
 				<source>Relation One</source>

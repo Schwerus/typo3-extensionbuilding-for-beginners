@@ -11,11 +11,11 @@
             "value": {
                 "actionGroup": {
                     "_default0_index": false,
-                    "_default1_list": false,
-                    "_default2_show": false,
+                    "_default1_list": true,
+                    "_default2_show": true,
                     "_default3_new_create": true,
-                    "_default4_edit_update": false,
-                    "_default5_delete": false,
+                    "_default4_edit_update": true,
+                    "_default5_delete": true,
                     "customActions": []
                 },
                 "name": "ModelOne",
@@ -41,10 +41,22 @@
                             "propertyIsExcludeField": true,
                             "propertyIsL10nModeExclude": false,
                             "propertyIsNullable": false,
-                            "propertyIsRequired": false,
+                            "propertyIsRequired": true,
                             "propertyName": "modelOneName",
                             "propertyType": "String",
                             "uid": "764786274893"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsNullable": false,
+                            "propertyIsRequired": true,
+                            "propertyName": "modelOneContent",
+                            "propertyType": "String",
+                            "uid": "1201130212697"
                         }
                     ]
                 },
@@ -170,7 +182,7 @@
     ],
     "storagePath": "\/var\/www\/html\/typo3conf\/ext\/",
     "log": {
-        "last_modified": "2024-11-06 01:42",
+        "last_modified": "2024-11-23 09:30",
         "extension_builder_version": "11.0.13",
         "be_user": " (1)"
     }

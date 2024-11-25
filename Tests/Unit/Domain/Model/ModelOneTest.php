@@ -57,6 +57,27 @@ class ModelOneTest extends UnitTestCase
     /**
      * @test
      */
+    public function getModelOneContentReturnsInitialValueForString(): void
+    {
+        self::assertSame(
+            '',
+            $this->subject->getModelOneContent()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setModelOneContentForStringSetsModelOneContent(): void
+    {
+        $this->subject->setModelOneContent('Conceived at T3CON10');
+
+        self::assertEquals('Conceived at T3CON10', $this->subject->_get('modelOneContent'));
+    }
+
+    /**
+     * @test
+     */
     public function getRelationOneReturnsInitialValueForModelTwo(): void
     {
         self::assertEquals(
