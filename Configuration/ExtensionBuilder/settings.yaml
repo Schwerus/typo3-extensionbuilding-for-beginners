@@ -52,13 +52,13 @@ overwriteSettings:
   Resources:
     Private:
       #Language: merge
-      #Layouts: keep
-      #Partials: keep
-      #Templates: keep
+      Layouts: keep
+      Partials: keep
+      Templates: keep
       Backend:
-        #Layouts: keep
-        #Partials: keep
-        #Templates: keep
+        Layouts: keep
+        Partials: keep
+        Templates: keep
 
   user_extension.svg: keep
 #  ext_localconf.php: merge

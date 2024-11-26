@@ -105,4 +105,25 @@ class ModelOne extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->modelOneContent = $modelOneContent;
     }
+
+        /**
+     * Returns the ModelTwoCategory
+     *
+     * @return string
+     */
+    public function getModelTwoCategory()
+    {
+        return $this->modelTwoCategory;
+    }
+
+    /**
+     * Sets the ModelTwoCategory
+     *
+     * @param string $modelTwoCategory
+     * @return void
+     */
+    public function setModelTwoCategory(string $modelTwoCategory)
+    {
+        $this->modelTwoCategory = $modelTwoCategory;
+    }
 }

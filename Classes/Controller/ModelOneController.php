@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Vendor\Extkey\Controller;
 
+use RC\extkey\Domain\Repository\ModelTwoRepository;
 
 /**
  * This file is part of the "extName" Extension for TYPO3 CMS.
@@ -27,6 +28,14 @@ class ModelOneController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
      */
     protected $modelOneRepository = null;
 
+        /**
+     * modelTwoRepository
+     *
+     * @var \Vendor\Extkey\Domain\Repository\ModelTwoRepository
+     */
+    protected $modelTwoRepository = null;
+
+
     /**
      * @param \Vendor\Extkey\Domain\Repository\ModelOneRepository $modelOneRepository
      */
@@ -36,13 +45,25 @@ class ModelOneController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
     }
 
     /**
+     * @param \Vendor\Extkey\Domain\Repository\ModelTwoRepository $modelTwoRepository
+     */
+    public function injectModelTwoRepository(\Vendor\Extkey\Domain\Repository\ModelTwoRepository $modelTwoRepository)
+    {
+        $this->modelTwoRepository = $modelTwoRepository;
+    }
+
+
+    /**
      * action new
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
     public function newAction(): \Psr\Http\Message\ResponseInterface
     {
+        $modeltwocategory = $this->modelTwoRepository->findAll();
+        $this->view->assign('modeltwocategory', $modeltwocategory);
         return $this->htmlResponse();
+        
     }
 
     /**

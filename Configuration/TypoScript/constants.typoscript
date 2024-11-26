@@ -9,6 +9,6 @@ plugin.tx_extkey_extfrontendkey {
     }
     persistence {
         # cat=plugin.tx_extkey_extfrontendkey//a; type=string; label=Default storage PID
-        storagePid =
+        storagePid = 86
     }
 }

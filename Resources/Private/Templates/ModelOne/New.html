@@ -15,14 +15,19 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
 <f:section name="content">
     <h1>New ModelOne</h1>
-
+    <f:debug inline="1">{modeltwocategory}</f:debug>
+        
     <f:flashMessages />
 
     <f:render partial="FormErrors" />
 
     <f:form action="create" name="newModelOne" object="{newModelOne}">
     <f:render partial="ModelOne/FormFields" />
+    <f:form.select name="modelTwoCategory" options="{modeltwocategory}" optionLabelField="model_two_name" optionValueField="uid"  />
     <f:form.submit value="Create new" />
     </f:form>
 </f:section>
+
 </html>
+
+
