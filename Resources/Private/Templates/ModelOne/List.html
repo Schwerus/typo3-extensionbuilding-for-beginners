@@ -15,13 +15,14 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
 <f:section name="content">
     <h1>Listing for ModelOne</h1>
-
+    
     <f:flashMessages />
 
     <table class="tx_extkey">
         <tr>
             <th><f:translate key="tx_extkey_domain_model_modelone.model_one_name" /></th>
             <th><f:translate key="tx_extkey_domain_model_modelone.model_one_content" /></th>
+            <th><f:translate key="tx_extkey_domain_model_modeltwo.model_two_name" /></th>
             <th></th>
             <th></th>
         </tr>
@@ -29,10 +30,15 @@ Otherwise your changes will be overwritten the next time you save the extension 
             <tr>
                 <td><f:link.action action="show" arguments="{modelOne : modelOne}">{modelOne.modelOneName}</f:link.action></td>
                 <td><f:link.action action="show" arguments="{modelOne : modelOne}">{modelOne.modelOneContent}</f:link.action></td>
+                <td>{modelOne.relationOne.modelTwoName}</td>
+                <td><f:format.date format="d.m.y">{modelOne.crdate}</f:format.date></td>
                 <td><f:link.action action="edit" arguments="{modelOne : modelOne}">Edit</f:link.action></td>
                 <td><f:link.action action="delete" arguments="{modelOne : modelOne}">Delete</f:link.action></td>
             </tr>
+
+            <f:debug inline="1">{modelOne.crdate}</f:debug>
         </f:for>
+
     </table>
 
     <f:link.action action="new">New ModelOne</f:link.action>

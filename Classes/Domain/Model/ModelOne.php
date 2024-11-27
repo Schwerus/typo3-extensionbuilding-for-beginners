@@ -106,24 +106,22 @@ class ModelOne extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->modelOneContent = $modelOneContent;
     }
 
-        /**
-     * Returns the ModelTwoCategory
-     *
-     * @return string
-     */
-    public function getModelTwoCategory()
-    {
-        return $this->modelTwoCategory;
-    }
+/**
+ * crdate
+ *
+ * @var \DateTime
+ */
+protected $crdate;
 
-    /**
-     * Sets the ModelTwoCategory
-     *
-     * @param string $modelTwoCategory
-     * @return void
-     */
-    public function setModelTwoCategory(string $modelTwoCategory)
-    {
-        $this->modelTwoCategory = $modelTwoCategory;
-    }
+/**
+ * Returns the crdate
+ *
+ * @return \DateTime|null
+ */
+public function getCrdate(): ?\DateTime
+{
+    return $this->crdate;
+}
+
+
 }

@@ -53,30 +53,32 @@ class ModelOneController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
     }
 
 
-    /**
-     * action new
-     *
-     * @return \Psr\Http\Message\ResponseInterface
-     */
-    public function newAction(): \Psr\Http\Message\ResponseInterface
-    {
-        $modeltwocategory = $this->modelTwoRepository->findAll();
-        $this->view->assign('modeltwocategory', $modeltwocategory);
-        return $this->htmlResponse();
-        
-    }
+/**
+ * action new
+ *
+ * @return \Psr\Http\Message\ResponseInterface
+ */
+public function newAction(): \Psr\Http\Message\ResponseInterface
+{
+    $modeltwocategory = $this->modelTwoRepository->findAll();
+    $this->view->assign('modeltwocategory', $modeltwocategory);
+    $this->view->assign('newModelOne', new \Vendor\Extkey\Domain\Model\ModelOne());
+    return $this->htmlResponse();
+}
 
-    /**
-     * action create
-     *
-     * @param \Vendor\Extkey\Domain\Model\ModelOne $newModelOne
-     */
-    public function createAction(\Vendor\Extkey\Domain\Model\ModelOne $newModelOne)
-    {
-        $this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/p/friendsoftypo3/extension-builder/master/en-us/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
-        $this->modelOneRepository->add($newModelOne);
-        $this->redirect('list');
-    }
+
+/**
+ * action create
+ *
+ * @param \Vendor\Extkey\Domain\Model\ModelOne $newModelOne
+ */
+public function createAction(\Vendor\Extkey\Domain\Model\ModelOne $newModelOne)
+{
+    $this->addFlashMessage('The object was created.', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+    $this->modelOneRepository->add($newModelOne);
+    $this->redirect('list');
+}
+
 
     /**
      * action list
