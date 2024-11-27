@@ -62,7 +62,17 @@ return [
                 ],
             ],
         ],
-
+        // CRDATE Manuell eingepflegt
+        'crdate' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.crdate',
+            'config' => [
+                'type' => 'input',
+                'renderType' => 'inputDateTime',
+                'eval' => 'datetime',
+                'readOnly' => true,
+            ],
+        ],  
         'model_one_name' => [
             'exclude' => true,
             'label' => 'LLL:EXT:extkey/Resources/Private/Language/locallang_db.xlf:tx_extkey_domain_model_modelone.model_one_name',

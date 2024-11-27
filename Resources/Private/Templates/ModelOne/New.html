@@ -14,8 +14,8 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="content">
-    <h1>New ModelOne</h1>
-    <f:debug inline="1">{modeltwocategory}</f:debug>
+    <h1>new.html</h1>
+    
         
     <f:flashMessages />
 
@@ -23,9 +23,16 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
     <f:form action="create" name="newModelOne" object="{newModelOne}">
     <f:render partial="ModelOne/FormFields" />
-    <f:form.select name="modelTwoCategory" options="{modeltwocategory}" optionLabelField="model_two_name" optionValueField="uid"  />
+    
+    <!-- Dropdown für die Auswahl von ModelTwo -->
+    <label for="relationOne">Kategorie auswählen:</label>
+    <f:form.select property="relationOne" options="{modeltwocategory}" optionLabelField="modelTwoName" optionValueField="uid" />
+
     <f:form.submit value="Create new" />
-    </f:form>
+</f:form>
+
+<f:link.action action="list">Back to list</f:link.action><br />
+
 </f:section>
 
 </html>
