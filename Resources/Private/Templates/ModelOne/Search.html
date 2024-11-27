@@ -1,0 +1,16 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="content">
+    <h1>Search ModelOne by Title</h1>
+    
+    <!-- Formular zur Eingabe eines Suchbegriffs -->
+    <f:form action="showSearchResults" controller="ModelOne" method="post">
+        <label for="searchInput">Enter search term:</label>
+        <f:form.textfield name="searchTerm" value="{searchTerm}" />
+        <f:form.submit value="Search" />
+    </f:form>
+
+    <f:link.action action="list" controller="ModelOne">Back to list</f:link.action><br />
+</f:section>
+</html>
