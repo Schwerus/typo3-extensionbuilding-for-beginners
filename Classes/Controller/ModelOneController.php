@@ -80,6 +80,61 @@ public function createAction(\Vendor\Extkey\Domain\Model\ModelOne $newModelOne)
 }
 
 
+// SEARCH - Mal sehen!
+
+/**
+ * Aktion zum Durchführen einer Suche
+ *
+ * @return \Psr\Http\Message\ResponseInterface
+ */
+public function searchAction(): \Psr\Http\Message\ResponseInterface
+{
+    // Initial leer, um das Suchfeld anzuzeigen
+    $searchTerm = '';
+    $this->view->assign('searchTerm', $searchTerm);
+    return $this->htmlResponse();
+}
+
+/**
+ * Aktion zum Anzeigen der Suchergebnisse
+ *
+ * @return \Psr\Http\Message\ResponseInterface
+ */
+public function showSearchResultsAction(): \Psr\Http\Message\ResponseInterface
+{
+    // Abrufen des eingegebenen Suchbegriffs
+    $searchTerm = $this->request->getArgument('searchTerm');
+    // Debugging: Ausgabe des Suchbegriffs
+    \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($searchTerm, 'Suchbegriff');
+
+    // Erstelle eine neue Abfrage
+    $query = $this->modelOneRepository->createQuery();
+
+    // Definiere die Bedingungen für die Spalten "title" und "prompt_inhalt"
+    $constraintmodelOneName = $query->like('modelOneName', '%' . $searchTerm . '%');
+    $constraintmodelOneContent = $query->like('modelOneContent', '%' . $searchTerm . '%');
+
+    // Kombiniere die beiden Bedingungen mit einem logicalOr
+    $query->matching(
+        $query->logicalOr($constraintmodelOneName, $constraintmodelOneContent)
+    );
+
+    // Führe die Abfrage aus und speichere die Ergebnisse
+    $modelOnes = $query->execute();
+
+    // Debugging: Ausgabe der gefundenen ModelOne-Datensätze
+    \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($modelOnes, 'Suchergebnisse');
+
+    // Daten an die View übergeben
+    $this->view->assignMultiple([
+        'modelOnes' => $modelOnes,  // Die Suchergebnisse an die View übergeben
+        'searchTerm' => $searchTerm  // Den Suchbegriff an die View übergeben
+    ]);
+    return $this->htmlResponse();
+}
+
+
+
     /**
      * action list
      *
@@ -87,10 +142,25 @@ public function createAction(\Vendor\Extkey\Domain\Model\ModelOne $newModelOne)
      */
     public function listAction(): \Psr\Http\Message\ResponseInterface
     {
-        $modelOnes = $this->modelOneRepository->findAll();
+        // Standardwerte für Sortierung
+        $sort = $this->request->hasArgument('sort') ? $this->request->getArgument('sort') : 'modelOneName';
+        $order = $this->request->hasArgument('order') ? $this->request->getArgument('order') : 'asc';
+
+        // Query mit Sortierung erstellen
+        $query = $this->modelOneRepository->createQuery();
+        $query->setOrderings([$sort => ($order === 'asc' ? \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING : \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING)]);
+
+        // Abfrage ausführen
+        $modelOnes = $query->execute();
+
+        // Werte an die View übergeben
         $this->view->assign('modelOnes', $modelOnes);
+        $this->view->assign('sort', $sort);
+        $this->view->assign('order', $order);
+
         return $this->htmlResponse();
     }
+
 
     /**
      * action show
@@ -113,7 +183,9 @@ public function createAction(\Vendor\Extkey\Domain\Model\ModelOne $newModelOne)
      */
     public function editAction(\Vendor\Extkey\Domain\Model\ModelOne $modelOne): \Psr\Http\Message\ResponseInterface
     {
+        $modeltwocategory = $this->modelTwoRepository->findAll();
         $this->view->assign('modelOne', $modelOne);
+        $this->view->assign('modeltwocategory', $modeltwocategory);
         return $this->htmlResponse();
     }
 

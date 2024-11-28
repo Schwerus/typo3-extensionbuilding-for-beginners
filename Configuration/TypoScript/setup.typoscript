@@ -20,6 +20,16 @@ plugin.tx_extkey_extfrontendkey {
         #callDefaultActionIfActionCantBeResolved = 1
     }
 }
+page = PAGE
+page.includeJSFooterlibs {
+    // JavaScript-Dateien asynchron nachladen (ab TYPO3 7.1)
+    file_01 = EXT:extkey/Resources/Public/JavaScript/copyToClipboard.js
+    file_01 {
+        #async = 1
+        #external = 1
+        disableCompression = 1
+        excludeFromConcatenation = 1
+    }
 
 # these classes are only used in auto-generated templates
 plugin.tx_extkey._CSS_DEFAULT_STYLE (
