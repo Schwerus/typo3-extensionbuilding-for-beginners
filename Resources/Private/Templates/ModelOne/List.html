@@ -78,8 +78,18 @@
         <tbody>
             <f:for each="{modelOnes}" as="modelOne">
                 <tr>
-                    <td><f:link.action action="show" arguments="{modelOne : modelOne}">{modelOne.modelOneName}</f:link.action></td>
-                    <td><f:link.action action="show" arguments="{modelOne : modelOne}">{modelOne.modelOneContent}</f:link.action></td>
+                    <td>
+                        <!--<button onclick="copyToClipboard('content-name-{modelOne.uid}')">Kopieren</button>
+                        <div id="content-name-{modelOne.uid}">-->
+                            <f:link.action action="show" arguments="{modelOne : modelOne}">{modelOne.modelOneName}</f:link.action>
+                        </div>
+                    </td>
+                    <td>
+                        <button onclick="copyToClipboard('content-content-{modelOne.uid}')">Kopieren</button>
+                        <div id="content-content-{modelOne.uid}">
+                            <f:link.action action="show" arguments="{modelOne : modelOne}">{modelOne.modelOneContent}</f:link.action>
+                        </div>
+                    </td>
                     <td>{modelOne.relationOne.modelTwoName}</td>
                     <td><f:format.date format="d.m.y">{modelOne.crdate}</f:format.date></td>
                     <td><f:link.action action="edit" arguments="{modelOne : modelOne}">Edit</f:link.action></td>
@@ -90,5 +100,11 @@
     </table>
 
     <f:link.action action="new">New ModelOne</f:link.action>
+
+    <!-- Externe JS-Datei zur Nutzung der Copy-to-Clipboard-Funktion -->
+
+
 </f:section>
+
+
 </html>
