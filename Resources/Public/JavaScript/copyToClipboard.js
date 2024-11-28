@@ -6,7 +6,7 @@ function copyToClipboard(elementId) {
         // Inhalt des Elements als Text speichern
         var textToCopy = element.innerText || element.textContent;
 
-        // Tempor�res Textfeld erstellen
+        // Temporäres Textfeld erstellen
         var tempInput = document.createElement("textarea");
         tempInput.value = textToCopy;
         document.body.appendChild(tempInput);
@@ -15,10 +15,22 @@ function copyToClipboard(elementId) {
         tempInput.select();
         document.execCommand("copy");
 
-        // Tempor�res Textfeld wieder entfernen
+        // Temporäres Textfeld wieder entfernen
         document.body.removeChild(tempInput);
 
         // Optional: Erfolgsmeldung anzeigen
         alert("Inhalt in die Zwischenablage kopiert!");
     }
+}
+
+// JavaScript-Funktion zum Umschalten der Sichtbarkeit der Kopieren-Buttons
+function toggleCopyButtons() {
+    var buttons = document.querySelectorAll('.copyshow');
+    buttons.forEach(function(button) {
+        if (button.style.display === 'none') {
+            button.style.display = 'inline-block';
+        } else {
+            button.style.display = 'none';
+        }
+    });
 }

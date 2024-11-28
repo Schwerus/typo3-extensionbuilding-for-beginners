@@ -6,6 +6,9 @@
     
     <f:flashMessages />
 
+    <!-- Button zum Umschalten der Kopieren-Buttons -->
+    <button onclick="toggleCopyButtons()">Show/Hide Copy Buttons</button>
+
     <!-- Berechnung der nächsten Sortierrichtung -->
     <f:if condition="{order} == 'asc'">
         <f:then>
@@ -79,13 +82,12 @@
             <f:for each="{modelOnes}" as="modelOne">
                 <tr>
                     <td>
-                        <!--<button onclick="copyToClipboard('content-name-{modelOne.uid}')">Kopieren</button>
-                        <div id="content-name-{modelOne.uid}">-->
+                        <div id="content-name-{modelOne.uid}">
                             <f:link.action action="show" arguments="{modelOne : modelOne}">{modelOne.modelOneName}</f:link.action>
                         </div>
                     </td>
                     <td>
-                        <button onclick="copyToClipboard('content-content-{modelOne.uid}')">Kopieren</button>
+                        <button class="copyshow" style="display: none;" onclick="copyToClipboard('content-content-{modelOne.uid}')">Kopieren</button>
                         <div id="content-content-{modelOne.uid}">
                             <f:link.action action="show" arguments="{modelOne : modelOne}">{modelOne.modelOneContent}</f:link.action>
                         </div>
@@ -100,11 +102,6 @@
     </table>
 
     <f:link.action action="new">New ModelOne</f:link.action>
-
-    <!-- Externe JS-Datei zur Nutzung der Copy-to-Clipboard-Funktion -->
-
-
 </f:section>
-
 
 </html>
