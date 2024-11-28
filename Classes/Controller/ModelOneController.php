@@ -183,7 +183,9 @@ public function showSearchResultsAction(): \Psr\Http\Message\ResponseInterface
      */
     public function editAction(\Vendor\Extkey\Domain\Model\ModelOne $modelOne): \Psr\Http\Message\ResponseInterface
     {
+        $modeltwocategory = $this->modelTwoRepository->findAll();
         $this->view->assign('modelOne', $modelOne);
+        $this->view->assign('modeltwocategory', $modeltwocategory);
         return $this->htmlResponse();
     }
 

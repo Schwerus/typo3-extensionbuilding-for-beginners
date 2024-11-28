@@ -22,6 +22,9 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
     <f:form action="update" name="modelOne" object="{modelOne}" >
     <f:render partial="ModelOne/FormFields" arguments="{modelOne:modelOne}" />
+        <!-- Dropdown für die Auswahl von ModelTwo -->
+        <label for="relationOne">Kategorie auswählen:</label>
+        <f:form.select property="relationOne" options="{modeltwocategory}" optionLabelField="modelTwoName" optionValueField="uid" />
     <f:form.submit value="Save" />
     </f:form>
 </f:section>
